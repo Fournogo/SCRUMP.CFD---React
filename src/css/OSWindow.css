@@ -1,0 +1,235 @@
+.OSWindow {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 80vw;
+    margin: auto;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    border-top: solid 2px #ffffff;
+    border-left: solid 2px #353535;
+    border-bottom: solid 2px #353535;
+    border-right: solid 2px #ffffff;
+}
+
+.OSYellowWindow {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: #ffff78;
+    box-sizing: border-box;
+    padding: 25px;
+    border-top: solid 2px #ffffff;
+    border-left: solid 2px #353535;
+    border-bottom: solid 2px #353535;
+    border-right: solid 2px #ffffff;
+    grid-column: 2;
+}
+
+.MenuBar {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    background-color: #b6a6b5;
+    border-top: solid 2px #fdd9ff;
+    border-left: solid 2px #736b74;
+    border-bottom: solid 2px #736b74;
+    border-right: solid 2px #fdd9ff;
+    height: 30px;
+    box-sizing: border-box; 
+  }
+
+.MenuButton {
+    display: flex;
+    flex-direction: column;
+    background-color: #d0a0cd;
+    border-top: solid 2px #ffffff;
+    border-left: solid 2px #353535;
+    border-bottom: solid 2px #353535;
+    border-right: solid 2px #ffffff;
+    box-sizing: border-box; 
+    height: 22px;
+    width: 22px;
+    cursor: pointer;
+    margin-right: 2.5px;
+}
+
+.ProgramText {
+    text-rendering: geometricPrecision;
+    color: #454545;
+    flex-grow: 1;
+    text-align: left;
+    margin-left: 5px;
+    font-weight: bold;
+}
+
+.Taskbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 60px;
+    box-sizing: border-box; 
+}
+
+.TaskbarItem {
+    margin-right: 20px;
+}
+
+.OSWindow.Maximized {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 2000;
+    border-top: 0;
+    border-left: 0;
+    border-bottom: 0;
+    border-right: 0;
+}
+
+.OSYellowWindow.Maximized {
+    width: 100%;
+}
+
+.OSYellowWindow.BrowserClosed {
+    width: 100%;
+}
+
+.BrowserWindowContainer {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px; 
+}
+
+.Browser {
+    background-color: #b6a6b5;
+    border-top: solid 2px #fdd9ff;
+    border-left: solid 2px #736b74;
+    border-bottom: solid 2px #736b74;
+    border-right: solid 2px #fdd9ff;
+    box-sizing: border-box; 
+    width: 100%;
+    height: 100%;
+    grid-column: 1;
+    padding: 25px;
+}
+
+.BrowserItemContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.BrowserItem {
+    display: flex;
+}
+
+.Browser.BrowserClosed {
+    display: none;
+}
+
+.DescriptionText {
+    flex-grow: 1;
+}
+
+.PurpleFlashText.Right {
+    text-align: right;
+}
+
+.ContentContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.BrowserWindowContainer.Maximized {
+    flex-grow: 1;
+}
+
+.BrowserWindowContainer.Minimized {
+    display: none;
+}
+
+.BrowserWindowContainer.BrowserClosed {
+    display: flex;
+}
+
+.ContentContainer.Maximized {
+    flex-grow: 1;
+}
+
+.Disable {
+    display: none;
+}
+
+.RemovePadding {
+    padding: 0;
+}
+
+.Gray {
+    color: #454545;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.BrowserDescription {
+    align-self: flex-end;
+    color: #454545;
+    font-size: 16px;
+}
+
+/* Portrait restyling for mobile */
+@media (orientation: portrait) {
+    .OSWindow {
+        width: 100vw;
+    }
+    .MenuBar {
+        height: 40px;
+    }
+    .MenuButton {
+        height: 32px;
+        width: 32px;
+        margin-right: 3px;
+    }
+    .ProgramText {
+        font-size: 30px;
+        margin-left: 8px;
+    }
+    .ContentContainer {
+        flex-direction: column;
+    }
+    .OSYellowWindow {
+        grid-column: 1 / span 2;
+        grid-row: 1;
+        display: flex;
+    }
+    .Browser {
+        grid-column: 1 / span 2;
+        grid-row: 2;
+    }
+    .BrowserWindowContainer {
+        grid-template-columns: 0.5fr;
+        grid-template-rows: 1fr 0.25fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px; 
+    }
+}
+
+@media (max-width: 530px) {
+    .ProgramText {
+        font-size: 18px;
+    }
+    .OSYellowWindow {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 376px) {
+    .Taskbar {
+        height: 120px;
+    }
+}

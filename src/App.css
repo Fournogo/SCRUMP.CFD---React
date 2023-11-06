@@ -1,0 +1,138 @@
+.App {
+  text-align: center;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+@keyframes PurpleFlash {
+  0%{color: rgb(252, 169, 252);}
+  50%{color: rgb(210, 36, 210);} 
+  100%{color: rgb(252, 169, 252);}
+}
+
+@keyframes Rainbow{
+  0%{color: orange;}  
+  10%{color: purple;} 
+  20%{color: red;}
+  30%{color: CadetBlue;}
+  40%{color: yellow;}
+  50%{color: coral;}
+  60%{color: green;}
+  70%{color: cyan;}
+  80%{color: DeepPink;}
+  90%{color: DodgerBlue;}
+  100%{color: orange;}
+}
+
+.PurpleFlashText {
+  text-align: center;
+  animation: PurpleFlash 3s infinite;
+  text-shadow: 2px 2px 2px #000000; 
+}
+
+.RainbowText {
+  text-align: center;
+  animation: Rainbow 5s infinite;
+  text-shadow: 2px 2px 2px #000000; 
+}
+
+body {
+  color: #e834eb;
+  font-family: "Comic Sans", "Comic Sans MS", "Chalkboard", "ChalkboardSE-Regular", sans-serif;
+  background-image: url('./background.webp');
+  background-repeat: repeat;
+  text-rendering: optimizeLegibility;
+  image-rendering: pixelated;
+}
+
+.CenterImg {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  width: 100%;
+}
+
+.CenterDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.YellowWindow {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex-grow: 1;
+  background-color: #ffff78;
+  border-top: solid 6px #ffffff;
+  border-left: solid 6px #353535;
+  border-bottom: solid 6px #353535;
+  border-right: solid 6px #ffffff;
+  box-sizing: border-box;
+  padding: 25px;
+  z-index: 1;
+}
+
+.Button {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #aeaeae;
+  border-top: solid 2px #ffffff;
+  border-left: solid 2px #353535;
+  border-bottom: solid 2px #353535;
+  border-right: solid 2px #ffffff;
+  cursor: pointer;
+}
+
+.InsetImage {
+  object-fit: contain;
+  width: 100%;
+  border-bottom: solid 2px #ffffff;
+  border-right: solid 2px #353535;
+  border-top: solid 2px #353535;
+  border-left: solid 2px #ffffff;
+  box-sizing: border-box; 
+}
+
+.bb-title {
+  font-weight: bold;
+}
+
+.bb-tooltop {
+  border: solid 2px black;
+}
+
+.FlexViewport {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+ /* Portrait restyling for mobile */
+@media (orientation: portrait) {
+  .YellowWindow {
+    height: 80vh; 
+    width: 100vw;
+  }
+}
+
+@media (max-width: 589px) {
+  .YellowWindow {
+    padding: 10px;
+  }
+}

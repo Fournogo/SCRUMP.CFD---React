@@ -1,0 +1,77 @@
+.DailyTable table, th, td {
+  border: solid 2px #353535;
+  border-collapse: collapse;
+  table-layout: fixed;
+  text-align: center;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+.DailyTable tr:nth-child(even) {
+  background-color: #fdffbd;
+}
+
+.DailyTable {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  border: solid 2px #353535;
+  box-sizing: border-box;
+  border-collapse: collapse;
+  table-layout: auto;
+  text-align: center;
+  padding-left: 3px;
+  padding-right: 3px;
+  font-size: large;
+}
+
+.PurpleFlashText.Header {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.FirstRow {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.Radar {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  position: absolute;
+}
+
+.Hidden {
+  display: none;
+}
+
+.RadarBackground {
+  height: 100%;
+  width: 50%;
+  background-color: #323232;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.RadarContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.ScratchCat {
+  position: absolute;
+  bottom: 0;
+  right: 5%;
+  z-index: 10;
+  height: 60px;
+}
+
+.DanceCat {
+  position: absolute;
+  left: 20%;
+  top: -42px;
+  height: 40px;
+}

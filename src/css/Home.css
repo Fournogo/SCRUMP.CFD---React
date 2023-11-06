@@ -1,0 +1,69 @@
+.Background {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    flex-direction: column;   
+    height: 100vh;
+    width: 100vw;
+}
+
+.YellowWindow.HomeYellowWindow {
+    position: absolute;
+    display: block;
+    height: 50vh; 
+    width: 55vw;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0;
+    cursor: pointer;
+    min-width: 400px;
+}
+
+.HomeText {
+    position: absolute;
+    top: 110%;
+    text-align: center;
+    width: 150%;
+    left: -25%;
+    font-size: 25px;
+}
+
+.SnailCat {
+    width: 94px;
+    height: 46px;
+    position: absolute;
+    left: 80px;
+    top: -45px;
+}
+
+.RunningCat {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+}
+
+.Hint {
+    position: absolute;
+    top: -35px;
+    right: 0;
+    text-shadow: 2px 2px 4px #000000
+}
+
+ /* Portrait restyling for mobile */ 
+@media (orientation: portrait) {
+    .SnailCat {
+        width: 71px;
+        height: 35px;
+        top: -36px;
+    }
+    .YellowWindow.HomeYellowWindow {
+        height: 50vh; 
+        width: 100vw;
+    }
+    .HomeText {
+        width: 100%;
+        left: 0;
+      }
+}

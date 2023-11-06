@@ -1,0 +1,45 @@
+.AnimateContainer {
+    width: 100%; /* or any specific width */
+    height: 800px; /* or any specific height */
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    border-bottom: solid 2px #ffffff;
+    border-right: solid 2px #353535;
+    border-top: solid 2px #353535;
+    border-left: solid 2px #ffffff;
+    background-color: #323232;
+}
+
+.White {
+    background-color: #ffffff;
+}
+
+.Animate {
+    display: flex;
+    width: 100%; /* or any specific width */
+    position: relative;
+}
+
+.AnimationImage {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    width: auto;
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media (max-width: 701px) {
+    .AnimateContainer {
+        height:600px;
+    }
+}
+
+@media (max-width: 501px) {
+    .AnimateContainer {
+        height:500px;
+    }
+}

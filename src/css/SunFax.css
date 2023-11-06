@@ -1,0 +1,41 @@
+.OSWindow.SunFax {
+    width: 600px;
+}
+
+.SunTable table, th, td {
+    border: solid 2px #353535;
+    border-collapse: collapse;
+    text-align: center;
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+
+.SunTable tr:nth-child(even) {
+    background-color: #fdffbd;
+}
+
+.SunTable {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: solid 2px #353535;
+    border-collapse: collapse;
+    text-align: center;
+    table-layout: fixed;
+    padding-left: 3px;
+    padding-right: 3px;
+    font-size: large;
+  }
+
+.Bold {
+    font-weight: bold;
+}
+
+.SmallText {
+    font-size: 10pt;
+}
+
+.PurpleFlashText.Header {
+    font-weight: bold;
+    font-size: 24px;
+  }

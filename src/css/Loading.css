@@ -1,0 +1,92 @@
+.YellowWindow.LoadingWindowOuter {
+    height: 40%;
+    width: 40%;
+    min-width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-top: solid 2px #ffffff;
+    border-left: solid 2px #353535;
+    border-bottom: solid 2px #353535;
+    border-right: solid 2px #ffffff;
+    font-size: 24px;
+    padding: 0;
+}
+
+.YellowWindow.LoadingWindow {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    border: none;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 2px 2px 2px #000000; 
+    padding: 10px;
+}
+
+.LoadingBar {
+    background-color: #b6a6b5;
+    border-bottom: solid 2px #ffffff;
+    border-right: solid 2px #353535;
+    border-top: solid 2px #353535;
+    border-left: solid 2px #ffffff;
+    height: 8%;
+    padding: 10px;
+    text-align: left;
+    display: flex;
+}
+
+.LoadingText {
+    margin-bottom: 20px;
+}
+
+.NyanCat {
+    position: relative;
+    height: 100%;
+    left: 0%;
+    cursor: pointer;
+}
+
+.LoadingSpace {
+    flex: 1;
+}
+
+.HiddenNyanCat {
+    position: relative;
+    right: 0;
+    height: 100%;
+    opacity: 0;
+    z-index: -1;
+}
+
+.DescriptionText2 {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 700px) {
+    .YellowWindow.LoadingWindowOuter {
+        height: 60%;
+    }
+}
+
+@media (max-width: 501px) {
+    .YellowWindow.LoadingWindowOuter {
+        height: 35%;
+        width: 100%;
+        min-width: 0;
+        font-size: 22px;
+    }
+    .DescriptionText2 {
+        display: none;
+    }
+    .DescriptionText1 {
+        flex: 1;
+    }
+    .LoadingBar {
+        padding: 4px;
+        height: 13%;
+    }
+}

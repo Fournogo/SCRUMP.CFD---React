@@ -1,0 +1,10 @@
+.InsetImage {
+    object-fit: contain;
+    width: 100%;
+    border-bottom: solid 2px #ffffff;
+    border-right: solid 2px #353535;
+    border-top: solid 2px #353535;
+    border-left: solid 2px #ffffff;
+    background-color: #323232;
+    box-sizing: border-box; 
+}

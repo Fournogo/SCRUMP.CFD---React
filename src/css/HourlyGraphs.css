@@ -1,0 +1,24 @@
+.HourlyGraph {
+    flex-direction: column;
+}
+
+.GraphContainer {
+    position: relative;
+    width: 98.5%;
+    left: -1%;
+}
+
+.RedCat {
+    position: absolute;
+    top: -44px;
+    right: 20%;
+    height: 52px;
+}
+
+.WhiteCat {
+    position: absolute;
+    top: -40px;
+    right: 20%;
+    height: 42px;
+    z-index: 10;
+}

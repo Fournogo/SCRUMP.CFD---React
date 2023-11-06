@@ -1,0 +1,11 @@
+.White {
+    background-color: #ffffff;
+}
+
+.SnailingCat {
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    height: 40px;
+    z-index: 10;
+}

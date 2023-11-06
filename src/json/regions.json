@@ -1,0 +1,435 @@
+
+{
+   "fort-worth": {
+      "name": "fort-worth",
+      "properName": "Fort Worth",
+      "dailyForecastData": {
+         "dailyForecastLink": "https://api.weather.gov/gridpoints/FWD/70,103/forecast",
+         "currentConditionsLink": "https://api.weather.gov/stations/KFWS/observations/latest?require_qc=false"
+      },
+      "radarImage": {
+         "radarLoopLink": "https://radar.weather.gov/ridge/standard/KFWS_loop.gif",
+         "radarLatestLink": "https://radar.weather.gov/ridge/standard/KFWS_0.gif"
+      },
+      "sunFaxData": {
+         "coordinates": [
+            32.7529204,
+            -97.3342545
+         ],
+         "timezone": "America/Chicago",
+         "uvDaily": "https://data.epa.gov/efservice/getEnvirofactsUVDAILY/CITY/fort%20worth/STATE/tx/json"
+      },
+      "hourlyData": {
+         "hourlyForecast": "https://api.weather.gov/gridpoints/FWD/70,103/forecast/hourly",
+         "uvHourly": "https://data.epa.gov/efservice/getEnvirofactsUVHOURLY/CITY/fort%20worth/STATE/tx/json"
+      },
+      "goesData": {
+         "goesCode": "sp"
+      },
+      "pointModelData": {},
+      "modelData": {
+         "modelState": "texas",
+         "properModelRegion": "Texas",
+         "state": "tx"
+      },
+      "soundingData": {
+         "soundingCode": "FWD"
+      }
+   },
+   "austin": {
+      "name": "austin",
+      "properName": "Austin",
+      "dailyForecastData": {
+         "dailyForecastLink": "https://api.weather.gov/gridpoints/EWX/156,91/forecast",
+         "currentConditionsLink": "https://api.weather.gov/stations/KAUS/observations/latest?require_qc=false"
+      },
+      "radarImage": {
+         "radarLoopLink": "https://radar.weather.gov/ridge/standard/KEWX_loop.gif",
+         "radarLatestLink": "https://radar.weather.gov/ridge/standard/KEWX_0.gif"
+      },
+      "sunFaxData": {
+         "coordinates": [
+            30.2690135,
+            -97.7441256
+         ],
+         "timezone": "America/Chicago",
+         "uvDaily": "https://data.epa.gov/efservice/getEnvirofactsUVDAILY/CITY/austin/STATE/tx/json"
+      },
+      "hourlyData": {
+         "hourlyForecast": "https://api.weather.gov/gridpoints/EWX/156,91/forecast/hourly",
+         "uvHourly": "https://data.epa.gov/efservice/getEnvirofactsUVHOURLY/CITY/austin/STATE/tx/json"
+      },
+      "goesData": {
+         "goesCode": "sp"
+      },
+      "pointModelData": {},
+      "modelData": {
+         "modelState": "texas",
+         "properModelRegion": "Texas",
+         "state": "tx"
+      },
+      "soundingData": {
+         "soundingCode": "FWD"
+      }
+   },
+   "denver": {
+      "name": "denver",
+      "properName": "Denver",
+      "dailyForecastData": {
+         "dailyForecastLink": "https://api.weather.gov/gridpoints/BOU/63,61/forecast",
+         "currentConditionsLink": "https://api.weather.gov/stations/KBKF/observations/latest?require_qc=false"
+      },
+      "radarImage": {
+         "radarLoopLink": "https://radar.weather.gov/ridge/standard/KFTG_loop.gif",
+         "radarLatestLink": "https://radar.weather.gov/ridge/standard/KFTG_0.gif"
+      },
+      "sunFaxData": {
+         "coordinates": [
+            39.7390837,
+            -104.989381
+         ],
+         "timezone": "America/Denver",
+         "uvDaily": "https://data.epa.gov/efservice/getEnvirofactsUVDAILY/CITY/denver/STATE/co/json"
+      },
+      "hourlyData": {
+         "hourlyForecast": "https://api.weather.gov/gridpoints/BOU/63,61/forecast/hourly",
+         "uvHourly": "https://data.epa.gov/efservice/getEnvirofactsUVHOURLY/CITY/denver/STATE/co/json"
+      },
+      "goesData": {
+         "goesCode": "nr"
+      },
+      "pointModelData": {},
+      "modelData": {
+         "modelState": "nm",
+         "properModelRegion": "Southwest",
+         "state": "co"
+      },
+      "soundingData": {
+         "soundingCode": "GJT"
+      }
+   },
+   "dallas": {
+      "name": "dallas",
+      "properName": "Dallas",
+      "dailyForecastData": {
+         "dailyForecastLink": "https://api.weather.gov/gridpoints/FWD/89,104/forecast",
+         "currentConditionsLink": "https://api.weather.gov/stations/KDAL/observations/latest?require_qc=false"
+      },
+      "radarImage": {
+         "radarLoopLink": "https://radar.weather.gov/ridge/standard/KFWS_loop.gif",
+         "radarLatestLink": "https://radar.weather.gov/ridge/standard/KFWS_0.gif"
+      },
+      "sunFaxData": {
+         "coordinates": [
+            32.7785136,
+            -96.7969958
+         ],
+         "timezone": "America/Chicago",
+         "uvDaily": "https://data.epa.gov/efservice/getEnvirofactsUVDAILY/CITY/dallas/STATE/tx/json"
+      },
+      "hourlyData": {
+         "hourlyForecast": "https://api.weather.gov/gridpoints/FWD/89,104/forecast/hourly",
+         "uvHourly": "https://data.epa.gov/efservice/getEnvirofactsUVHOURLY/CITY/dallas/STATE/tx/json"
+      },
+      "goesData": {
+         "goesCode": "sp"
+      },
+      "pointModelData": {},
+      "modelData": {
+         "modelState": "texas",
+         "properModelRegion": "Texas",
+         "state": "tx"
+      },
+      "soundingData": {
+         "soundingCode": "FWD"
+      }
+   },
+   "houston": {
+      "name": "houston",
+      "properName": "Houston",
+      "dailyForecastData": {
+         "dailyForecastLink": "https://api.weather.gov/gridpoints/HGX/65,96/forecast",
+         "currentConditionsLink": "https://api.weather.gov/stations/KIAH/observations/latest?require_qc=false"
+      },
+      "radarImage": {
+         "radarLoopLink": "https://radar.weather.gov/ridge/standard/KHGX_loop.gif",
+         "radarLatestLink": "https://radar.weather.gov/ridge/standard/KHGX_0.gif"
+      },
+      "sunFaxData": {
+         "coordinates": [
+            29.7587024,
+            -95.364544
+         ],
+         "timezone": "America/Chicago",
+         "uvDaily": "https://data.epa.gov/efservice/getEnvirofactsUVDAILY/CITY/houston/STATE/tx/json"
+      },
+      "hourlyData": {
+         "hourlyForecast": "https://api.weather.gov/gridpoints/HGX/65,96/forecast/hourly",
+         "uvHourly": "https://data.epa.gov/efservice/getEnvirofactsUVHOURLY/CITY/houston/STATE/tx/json"
+      },
+      "goesData": {
+         "goesCode": "sp"
+      },
+      "pointModelData": {},
+      "modelData": {
+         "modelState": "texas",
+         "properModelRegion": "Texas",
+         "state": "tx"
+      },
+      "soundingData": {
+         "soundingCode": "FWD"
+      }
+   },
+   "reno": {
+      "name": "reno",
+      "properName": "Reno",
+      "dailyForecastData": {
+         "dailyForecastLink": "https://api.weather.gov/gridpoints/REV/45,106/forecast",
+         "currentConditionsLink": "https://api.weather.gov/stations/KRNO/observations/latest?require_qc=false"
+      },
+      "radarImage": {
+         "radarLoopLink": "https://radar.weather.gov/ridge/standard/KRGX_loop.gif",
+         "radarLatestLink": "https://radar.weather.gov/ridge/standard/KRGX_0.gif"
+      },
+      "sunFaxData": {
+         "coordinates": [
+            39.5302774,
+            -119.8146196
+         ],
+         "timezone": "America/Los_Angeles",
+         "uvDaily": "https://data.epa.gov/efservice/getEnvirofactsUVDAILY/CITY/reno/STATE/nv/json"
+      },
+      "hourlyData": {
+         "hourlyForecast": "https://api.weather.gov/gridpoints/REV/45,106/forecast/hourly",
+         "uvHourly": "https://data.epa.gov/efservice/getEnvirofactsUVHOURLY/CITY/reno/STATE/nv/json"
+      },
+      "goesData": {
+         "goesCode": "psw"
+      },
+      "pointModelData": {},
+      "modelData": {
+         "modelState": "nm",
+         "properModelRegion": "Southwest",
+         "state": "nv"
+      },
+      "soundingData": {
+         "soundingCode": "REV"
+      }
+   },
+   "chicago": {
+      "name": "chicago",
+      "properName": "Chicago",
+      "dailyForecastData": {
+         "dailyForecastLink": "https://api.weather.gov/gridpoints/LOT/76,73/forecast",
+         "currentConditionsLink": "https://api.weather.gov/stations/KMDW/observations/latest?require_qc=false"
+      },
+      "radarImage": {
+         "radarLoopLink": "https://radar.weather.gov/ridge/standard/KLOT_loop.gif",
+         "radarLatestLink": "https://radar.weather.gov/ridge/standard/KLOT_0.gif"
+      },
+      "sunFaxData": {
+         "coordinates": [
+            41.8808623,
+            -87.6301921
+         ],
+         "timezone": "America/Chicago",
+         "uvDaily": "https://data.epa.gov/efservice/getEnvirofactsUVDAILY/CITY/chicago/STATE/il/json"
+      },
+      "hourlyData": {
+         "hourlyForecast": "https://api.weather.gov/gridpoints/LOT/76,73/forecast/hourly",
+         "uvHourly": "https://data.epa.gov/efservice/getEnvirofactsUVHOURLY/CITY/chicago/STATE/il/json"
+      },
+      "goesData": {
+         "goesCode": "cgl"
+      },
+      "pointModelData": {},
+      "modelData": {
+         "modelState": "mn",
+         "properModelRegion": "Northern Midwest",
+         "state": "il"
+      },
+      "soundingData": {
+         "soundingCode": "DVN"
+      }
+   },
+   "minneapolis": {
+      "name": "minneapolis",
+      "properName": "Minneapolis",
+      "dailyForecastData": {
+         "dailyForecastLink": "https://api.weather.gov/gridpoints/MPX/108,72/forecast",
+         "currentConditionsLink": "https://api.weather.gov/stations/KMSP/observations/latest?require_qc=false"
+      },
+      "radarImage": {
+         "radarLoopLink": "https://radar.weather.gov/ridge/standard/KMPX_loop.gif",
+         "radarLatestLink": "https://radar.weather.gov/ridge/standard/KMPX_0.gif"
+      },
+      "sunFaxData": {
+         "coordinates": [
+            44.9773623,
+            -93.2653873
+         ],
+         "timezone": "America/Chicago",
+         "uvDaily": "https://data.epa.gov/efservice/getEnvirofactsUVDAILY/CITY/minneapolis/STATE/mn/json"
+      },
+      "hourlyData": {
+         "hourlyForecast": "https://api.weather.gov/gridpoints/MPX/108,72/forecast/hourly",
+         "uvHourly": "https://data.epa.gov/efservice/getEnvirofactsUVHOURLY/CITY/minneapolis/STATE/mn/json"
+      },
+      "goesData": {
+         "goesCode": "umv"
+      },
+      "pointModelData": {},
+      "modelData": {
+         "modelState": "mn",
+         "properModelRegion": "Northern Midwest",
+         "state": "mn"
+      },
+      "soundingData": {
+         "soundingCode": "MPX"
+      }
+   },
+   "seattle": {
+      "name": "seattle",
+      "properName": "Seattle",
+      "dailyForecastData": {
+         "dailyForecastLink": "https://api.weather.gov/gridpoints/SEW/125,68/forecast",
+         "currentConditionsLink": "https://api.weather.gov/stations/KSEA/observations/latest?require_qc=false"
+      },
+      "radarImage": {
+         "radarLoopLink": "https://radar.weather.gov/ridge/standard/KATX_loop.gif",
+         "radarLatestLink": "https://radar.weather.gov/ridge/standard/KATX_0.gif"
+      },
+      "sunFaxData": {
+         "coordinates": [
+            47.6112904,
+            -122.3293188
+         ],
+         "timezone": "America/Los_Angeles",
+         "uvDaily": "https://data.epa.gov/efservice/getEnvirofactsUVDAILY/CITY/seattle/STATE/wa/json"
+      },
+      "hourlyData": {
+         "hourlyForecast": "https://api.weather.gov/gridpoints/SEW/125,68/forecast/hourly",
+         "uvHourly": "https://data.epa.gov/efservice/getEnvirofactsUVHOURLY/CITY/seattle/STATE/wa/json"
+      },
+      "goesData": {
+         "goesCode": "pnw"
+      },
+      "pointModelData": {},
+      "modelData": {
+         "modelState": "wa",
+         "properModelRegion": "Pacific Northwest",
+         "state": "wa"
+      },
+      "soundingData": {
+         "soundingCode": "UIL"
+      }
+   },
+   "new-york": {
+      "name": "new-york",
+      "properName": "New York",
+      "dailyForecastData": {
+         "dailyForecastLink": "https://api.weather.gov/gridpoints/OKX/33,35/forecast",
+         "currentConditionsLink": "https://api.weather.gov/stations/KNYC/observations/latest?require_qc=false"
+      },
+      "radarImage": {
+         "radarLoopLink": "https://radar.weather.gov/ridge/standard/KOKX_loop.gif",
+         "radarLatestLink": "https://radar.weather.gov/ridge/standard/KOKX_0.gif"
+      },
+      "sunFaxData": {
+         "coordinates": [
+            40.7131466,
+            -74.0064522
+         ],
+         "timezone": "America/New_York",
+         "uvDaily": "https://data.epa.gov/efservice/getEnvirofactsUVDAILY/CITY/new%20york/STATE/ny/json"
+      },
+      "hourlyData": {
+         "hourlyForecast": "https://api.weather.gov/gridpoints/OKX/33,35/forecast/hourly",
+         "uvHourly": "https://data.epa.gov/efservice/getEnvirofactsUVHOURLY/CITY/new%20york/STATE/ny/json"
+      },
+      "goesData": {
+         "goesCode": "ne"
+      },
+      "pointModelData": {},
+      "modelData": {
+         "modelState": "ny",
+         "properModelRegion": "Northern East Coast",
+         "state": "ny"
+      },
+      "soundingData": {
+         "soundingCode": "OKX"
+      }
+   },
+   "albuquerque": {
+      "name": "albuquerque",
+      "properName": "Albuquerque",
+      "dailyForecastData": {
+         "dailyForecastLink": "https://api.weather.gov/gridpoints/ABQ/98,119/forecast",
+         "currentConditionsLink": "https://api.weather.gov/stations/KABQ/observations/latest?require_qc=false"
+      },
+      "radarImage": {
+         "radarLoopLink": "https://radar.weather.gov/ridge/standard/KABX_loop.gif",
+         "radarLatestLink": "https://radar.weather.gov/ridge/standard/KABX_0.gif"
+      },
+      "sunFaxData": {
+         "coordinates": [
+            35.0836606,
+            -106.6511669
+         ],
+         "timezone": "America/Denver",
+         "uvDaily": "https://data.epa.gov/efservice/getEnvirofactsUVDAILY/CITY/albuquerque/STATE/nm/json"
+      },
+      "hourlyData": {
+         "hourlyForecast": "https://api.weather.gov/gridpoints/ABQ/98,119/forecast/hourly",
+         "uvHourly": "https://data.epa.gov/efservice/getEnvirofactsUVHOURLY/CITY/albuquerque/STATE/nm/json"
+      },
+      "goesData": {
+         "goesCode": "sr"
+      },
+      "pointModelData": {},
+      "modelData": {
+         "modelState": "nm",
+         "properModelRegion": "Southwest",
+         "state": "nm"
+      },
+      "soundingData": {
+         "soundingCode": "ABQ"
+      }
+   },
+   "ohio": {
+      "name": "ohio",
+      "properName": "OHIO",
+      "dailyForecastData": {
+         "dailyForecastLink": "https://api.weather.gov/gridpoints/ILN/85,81/forecast",
+         "currentConditionsLink": "https://api.weather.gov/stations/KCMH/observations/latest?require_qc=false"
+      },
+      "radarImage": {
+         "radarLoopLink": "https://radar.weather.gov/ridge/standard/KILN_loop.gif",
+         "radarLatestLink": "https://radar.weather.gov/ridge/standard/KILN_0.gif"
+      },
+      "sunFaxData": {
+         "coordinates": [
+            39.9611239,
+            -82.9986318
+         ],
+         "timezone": "America/New_York",
+         "uvDaily": "https://data.epa.gov/efservice/getEnvirofactsUVDAILY/CITY/columbus/STATE/oh/json"
+      },
+      "hourlyData": {
+         "hourlyForecast": "https://api.weather.gov/gridpoints/ILN/85,81/forecast/hourly",
+         "uvHourly": "https://data.epa.gov/efservice/getEnvirofactsUVHOURLY/CITY/columbus/STATE/oh/json"
+      },
+      "goesData": {
+         "goesCode": "cgl"
+      },
+      "pointModelData": {},
+      "modelData": {
+         "modelState": "mn",
+         "properModelRegion": "OHIO",
+         "state": "oh"
+      },
+      "soundingData": {
+         "soundingCode": "OKX"
+      }
+   }
+}

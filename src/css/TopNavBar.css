@@ -1,0 +1,44 @@
+.TopNavBar {
+    position: fixed;
+    top: 0;
+    height: 5vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px; 
+    margin-top: 10px;
+    z-index: 1000;
+  }
+
+.MusicNote {
+    position: absolute;
+    height: 100%;
+    left: 20px;
+    cursor: pointer;
+    z-index: 1000;
+  }
+  
+  .BackButton {
+    position: absolute;
+    height: 100%;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1000;
+  }
+
+.LeftNavColumn {
+   grid-column: 1;
+}
+
+.RightNavColumn {
+    grid-column: 2;
+ }
+
+/* Portrait restyling for mobile */
+@media (orientation: portrait) {
+  .TopNavBar {
+    height: 6vh;
+  }
+}

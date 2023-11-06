@@ -1,0 +1,56 @@
+{
+    "sp": {
+        "properName": "Southern Plains",
+        "goesJson": "https://cdn.star.nesdis.noaa.gov/GOES16/catalogs/GOES16/SECTOR_GEOCOLOR_sp_catalog.json",
+        "goesLink": "https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/sp/GEOCOLOR/",
+        "goesResolution": "1200x1200"
+    },
+    "cgl": {
+        "properName": "OHIO",
+        "goesJson": "https://cdn.star.nesdis.noaa.gov/GOES16/catalogs/GOES16/SECTOR_GEOCOLOR_cgl_catalog.json",
+        "goesLink": "https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/cgl/GEOCOLOR/",
+        "goesResolution": "1200x1200"
+    },
+    "umv": {
+        "properName": "Northern Plains",
+        "goesJson": "https://cdn.star.nesdis.noaa.gov/GOES16/catalogs/GOES16/SECTOR_GEOCOLOR_umv_catalog.json",
+        "goesLink": "https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/umv/GEOCOLOR/",
+        "goesResolution": "1200x1200"
+    },
+    "nr": {
+        "properName": "Northern Rockies",
+        "goesJson": "https://cdn.star.nesdis.noaa.gov/GOES16/catalogs/GOES16/SECTOR_GEOCOLOR_nr_catalog.json",
+        "goesLink": "https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/nr/GEOCOLOR/",
+        "goesResolution": "1200x1200"
+    },
+    "pnw": {
+        "properName": "Pacific Northwest",
+        "goesJson": "https://cdn.star.nesdis.noaa.gov/GOES18/catalogs/GOES18/SECTOR_GEOCOLOR_pnw_catalog.json",
+        "goesLink": "https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/pnw/GEOCOLOR/",
+        "goesResolution": "1200x1200"
+    },
+    "psw": {
+        "properName": "Pacific Southwest",
+        "goesJson": "https://cdn.star.nesdis.noaa.gov/GOES18/catalogs/GOES18/SECTOR_GEOCOLOR_psw_catalog.json",
+        "goesLink": "https://cdn.star.nesdis.noaa.gov/GOES18/ABI/SECTOR/psw/GEOCOLOR/",
+        "goesResolution": "1200x1200"
+    },
+    "ne": {
+        "properName": "Northeast",
+        "goesJson": "https://cdn.star.nesdis.noaa.gov/GOES16/catalogs/GOES16/SECTOR_GEOCOLOR_ne_catalog.json",
+        "goesLink": "https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/ne/GEOCOLOR/",
+        "goesResolution": "1200x1200"
+    },
+    "sr": {
+        "properName": "Southern Rockies",
+        "goesJson": "https://cdn.star.nesdis.noaa.gov/GOES16/catalogs/GOES16/SECTOR_GEOCOLOR_sr_catalog.json",
+        "goesLink": "https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/sr/GEOCOLOR/",
+        "goesResolution": "1200x1200"
+    },
+    "conus": {
+        "properName": "Continental US",
+        "goes_json": "https://cdn.star.nesdis.noaa.gov/GOES16/catalogs/GOES16/CONUS_GEOCOLOR_catalog.json",
+        "goes_link": "https://cdn.star.nesdis.noaa.gov/GOES16/ABI/CONUS/GEOCOLOR/",
+        "goesResolution": "2500x1500"
+    }
+}

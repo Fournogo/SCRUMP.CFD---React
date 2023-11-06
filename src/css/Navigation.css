@@ -1,0 +1,43 @@
+.Background {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    flex-direction: column;   
+    height: 100vh;
+    width: 100vw;
+}
+
+.YellowWindow.NavigationYellowWindow {
+    height: 550px; 
+    width: 60vw;
+    min-width: 358px;
+    flex-grow: 0;
+}
+
+.Nancy {
+    width: 350px;
+    height: 80px;
+    margin-top: 40px;
+}
+
+@media (orientation: portrait) {
+    .YellowWindow.NavigationYellowWindow {
+        height: 550px;
+        width: 100vw;
+        padding: 10px;
+        margin-top: 50px;
+    }
+    .Nancy {
+        width: 300px;
+        height: 69px;
+        margin-top: 30px;
+    }
+}
+
+@media (max-height: 715px) {
+    .Nancy {
+        width: 200px;
+        height: 46px;
+        margin-top: 10px;
+    }
+}

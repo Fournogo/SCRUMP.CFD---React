@@ -1,0 +1,8 @@
+.Button.PauseButton {
+    width: 50px;
+}
+
+.Button.BrowserButton {
+    width: 120px;
+    height: 30px;
+}

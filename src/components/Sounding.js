@@ -25,7 +25,8 @@ function Sounding({ regionData }) {
     const windowProps = {
         title: "RADIOSONDE.EXE",
         descriptionText: "A BALLOON DIED FOR THIS GRAPH",
-        outerChildren: <><img className="SnailingCat" src="/gifs/snailing-cat.gif"></img></>
+        outerChildren: <><img className="SnailingCat" src="/gifs/snailing-cat.gif"></img></>,
+        contentClassName: 'ContentHeight'
     }
 
     return (

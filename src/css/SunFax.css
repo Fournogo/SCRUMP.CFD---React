@@ -2,14 +2,6 @@
     width: 600px;
 }
 
-.SunTable table, th, td {
-    border: solid 2px #353535;
-    border-collapse: collapse;
-    text-align: center;
-    padding-left: 3px;
-    padding-right: 3px;
-  }
-
 .SunTable tr:nth-child(even) {
     background-color: #fdffbd;
 }
@@ -38,4 +30,10 @@
 .PurpleFlashText.Header {
     font-weight: bold;
     font-size: 24px;
-  }
+}
+
+@media (max-width: 927px) {
+    .SunTable {
+        border: solid 1px #353535;
+    }
+}

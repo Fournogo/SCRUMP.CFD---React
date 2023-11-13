@@ -9,6 +9,7 @@ import 'billboard.js/dist/billboard.css';
 
 function HourlyGraphs({ regionData, sunData }) {
     let shadedRegions;
+    const widthThreshold = 927;
 
     const [TemperatureOptions, setTemperatureOptions] = useState(null);
     const [PercentOptions, setPercentOptions] = useState(null);
@@ -16,7 +17,13 @@ function HourlyGraphs({ regionData, sunData }) {
 
     async function initNWSGraphs() {
       const {temperatureCols, percentCols} = await NWSHourlyUtil(regionData)
-      
+      const screenWidth = window.innerWidth;
+        let showText
+        if (screenWidth < widthThreshold) {
+          showText = false
+        } else {
+          showText = true
+        }
       setTemperatureOptions(
         {
           title: {
@@ -47,6 +54,9 @@ function HourlyGraphs({ regionData, sunData }) {
                           let month = x.getMonth() + 1; // Get the month value (January is 0)
                           let date = x.getDate(); // Get the date value
                           return month + "-" + date + " " + hours + ":00 " + ampm;
+                      },
+                      text: {
+                        show: showText
                       }
                 }
               }
@@ -96,6 +106,9 @@ function HourlyGraphs({ regionData, sunData }) {
                           let month = x.getMonth() + 1; // Get the month value (January is 0)
                           let date = x.getDate(); // Get the date value
                           return month + "-" + date + " " + hours + ":00 " + ampm;
+                      },
+                      text: {
+                        show: showText
                       }
                 },
               }
@@ -111,8 +124,13 @@ function HourlyGraphs({ regionData, sunData }) {
 
       async function initUVGraph() {
         const UVCols = await EPAUVUtil(regionData)
-        console.log(UVCols)
-        
+        const screenWidth = window.innerWidth;
+        let showText
+        if (screenWidth < widthThreshold) {
+          showText = false
+        } else {
+          showText = true
+        }
         setUVOptions(
           {
             title: {
@@ -141,15 +159,19 @@ function HourlyGraphs({ regionData, sunData }) {
                 x: {
                     type: "timeseries",
                     tick: {
-                        format: function (x) {
+                      format: function (x) {
                             let hours = x.getHours(); 
                             let ampm = hours >= 12 ? 'PM' : 'AM';
                             hours = hours % 12 || 12;
                             let month = x.getMonth() + 1; // Get the month value (January is 0)
                             let date = x.getDate(); // Get the date value
+
                             return month + "-" + date + " " + hours + ":00 " + ampm;
-                        }
-                  }
+                          },
+                      text: {
+                        show: showText
+                      }
+                    }
                 }
               },
               regions: shadedRegions,
@@ -174,7 +196,8 @@ function HourlyGraphs({ regionData, sunData }) {
       'title': 'HOURLY_CHART.PRG',
       'outerChildren': <>
       <img className="RedCat" src="/gifs/3d-sitting-cat.gif"></img>
-      </>
+      </>,
+      'removePadding': true
   }
 
     return (

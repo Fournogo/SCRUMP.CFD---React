@@ -34,8 +34,8 @@ function Home() {
         <img className="RunningCat" src="gifs/running.gif"></img>
         <h4 className = "HomeText RainbowText">{ message }</h4>
       </Window>
-
       </div>
+      {/*<img className="ScrumpTech" src="/png/scrumptech.png"></img>*/}
       </div>
     );
   }

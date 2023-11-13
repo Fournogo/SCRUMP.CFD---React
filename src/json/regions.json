@@ -424,12 +424,24 @@
       },
       "pointModelData": {},
       "modelData": {
-         "modelState": "mn",
+         "modelState": "ny",
          "properModelRegion": "OHIO",
          "state": "oh"
       },
       "soundingData": {
          "soundingCode": "OKX"
+      }
+   },
+   "united-states": {
+      "name": "national",
+      "properName": "United States",
+      "goesData": {
+         "goesCode": "conus"
+      },
+      "modelData": {
+         "modelState": "national",
+         "properModelRegion": "United States",
+         "state": "national"
       }
    }
 }

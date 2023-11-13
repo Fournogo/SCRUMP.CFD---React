@@ -104,13 +104,14 @@ body {
   border-top: solid 2px #353535;
   border-left: solid 2px #ffffff;
   box-sizing: border-box; 
+  height: 100%;
 }
 
 .bb-title {
   font-weight: bold;
 }
 
-.bb-tooltop {
+.bb-tooltip {
   border: solid 2px black;
 }
 

@@ -10,7 +10,7 @@ export async function NDFDUtil(regionData) {
     const cloudCover = ["Sky Cover"];
     const forecastTime = ["x"];
 
-    for (let i = 0; i < 36; i++) {
+    for (let i = 0; i < cloudCoverRawData.length - 1; i++) {
         cloudCover.push(cloudCoverRawData[i][1]);
         forecastTime.push(cloudCoverRawData[i][0].slice(0,10) + " " + cloudCoverRawData[i][0].slice(11,16));
     }

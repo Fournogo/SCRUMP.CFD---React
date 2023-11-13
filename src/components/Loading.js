@@ -14,8 +14,8 @@ function Loading({ percent }) {
         <>
         <Window className="LoadingWindowOuter">
             <Window className="LoadingWindow">
-                <div className="DescriptionText1">BLESS THIS MESS AND BE PATIENT!!</div>
-                <div className="DescriptionText2">YOU HAVE NO IDEA HOW HARD WE'RE WORKING TO GET THIS LOADED</div>
+                <div className="DescriptionText1">THIS USUALLY WORKS BE PATIENT!!</div>
+                <div className="DescriptionText2">IF WE DON'T LOAD THIS RIGHT YOU'LL HAVE A SEIZURE</div>
                 
                 {(percent) && (
                     <div className="LoadingText">{loadingMessage}<br></br>{percent}% COMPLETE</div>

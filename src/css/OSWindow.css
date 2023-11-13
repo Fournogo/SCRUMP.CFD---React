@@ -4,12 +4,13 @@
     position: relative;
     width: 80vw;
     margin: auto;
-    margin-top: 80px;
+    margin-top: 0px;
     margin-bottom: 80px;
     border-top: solid 2px #ffffff;
     border-left: solid 2px #353535;
     border-bottom: solid 2px #353535;
     border-right: solid 2px #ffffff;
+    box-sizing: border-box;
 }
 
 .OSYellowWindow {
@@ -52,6 +53,7 @@
     width: 22px;
     cursor: pointer;
     margin-right: 2.5px;
+    padding: 1px;
 }
 
 .ProgramText {
@@ -72,7 +74,7 @@
 }
 
 .TaskbarItem {
-    margin-right: 20px;
+    margin-right: 10px;
 }
 
 .OSWindow.Maximized {
@@ -80,8 +82,8 @@
     top: 0;
     left: 0;
     margin: 0;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     z-index: 2000;
     border-top: 0;
     border-left: 0;
@@ -160,6 +162,7 @@
 
 .ContentContainer.Maximized {
     flex-grow: 1;
+    height: 100%;
 }
 
 .Disable {
@@ -213,7 +216,7 @@
     }
     .BrowserWindowContainer {
         grid-template-columns: 0.5fr;
-        grid-template-rows: 1fr 0.25fr;
+        /*grid-template-rows: 1fr 0.25fr;*/
         grid-column-gap: 0px;
         grid-row-gap: 0px; 
     }
@@ -226,10 +229,82 @@
     .OSYellowWindow {
         padding: 10px;
     }
+    .Browser {
+        padding: 10px;
+    }
+    .RemovePadding {
+        padding: 0;
+    }
 }
 
 @media (max-width: 376px) {
     .Taskbar {
         height: 120px;
+    }
+}
+
+@media (max-width: 950px) {
+    .ContentContainer {
+        flex-direction: column;
+    }
+    .OSYellowWindow {
+        grid-column: 1 / span 2;
+        grid-row: 1;
+        display: flex;
+    }
+    .Browser {
+        grid-column: 1 / span 2;
+        grid-row: 2;
+    }
+    .BrowserWindowContainer {
+        grid-template-columns: 0.5fr;
+        grid-template-rows: 1fr 0.25fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px; 
+    }
+    .OSWindow.Maximized {
+        overflow: auto;
+    }
+}
+
+@media (max-width: 1050px) {
+    .Gray {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 927px) {
+    .OSWindow {
+        border-top: solid 1px #ffffff;
+        border-left: solid 1px #353535;
+        border-bottom: solid 1px #353535;
+        border-right: solid 1px #ffffff;
+    }
+    .OSYellowWindow {
+        border-top: solid 1px #ffffff;
+        border-left: solid 1px #353535;
+        border-bottom: solid 1px #353535;
+        border-right: solid 1px #ffffff;
+    }
+    .MenuBar {
+        border-top: solid 1px #fdd9ff;
+        border-left: solid 1px #736b74;
+        border-bottom: solid 1px #736b74;
+        border-right: solid 1px #fdd9ff;
+    }
+    .MenuButton {
+        border-top: solid 1px #ffffff;
+        border-left: solid 1px #353535;
+        border-bottom: solid 1px #353535;
+        border-right: solid 1px #ffffff;
+    }
+    .Browser {
+        border-top: solid 1px #fdd9ff;
+        border-left: solid 1px #736b74;
+        border-bottom: solid 1px #736b74;
+        border-right: solid 1px #fdd9ff;
+    }
+    .MenuButton {
+        padding: 4px;
     }
 }

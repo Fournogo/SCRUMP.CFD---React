@@ -3,8 +3,7 @@
   border-collapse: collapse;
   table-layout: fixed;
   text-align: center;
-  padding-left: 3px;
-  padding-right: 3px;
+  padding: 0;
 }
 
 .DailyTable tr:nth-child(even) {
@@ -20,9 +19,9 @@
   border-collapse: collapse;
   table-layout: auto;
   text-align: center;
-  padding-left: 3px;
-  padding-right: 3px;
   font-size: large;
+  -webkit-border-horizontal-spacing: 0;
+  -webkit-border-vertical-spacing: 0;
 }
 
 .PurpleFlashText.Header {
@@ -53,6 +52,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border: solid 2px #353535;
+  box-sizing: border-box;
 }
 
 .RadarContainer {
@@ -74,4 +75,27 @@
   left: 20%;
   top: -42px;
   height: 40px;
+}
+
+.Icon {
+  height: 35px;
+}
+
+.IconCell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 927px) {
+  .DailyTable {
+    border: solid 1px #353535;
+    height: 5px;
+  }
+  .DailyTable table, th, td {
+    border: solid 1px #353535;
+  }
+  .RadarBackground {
+    border: solid 1px #353535;
+  }
 }

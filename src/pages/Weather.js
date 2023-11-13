@@ -24,7 +24,9 @@ function Weather() {
   useEffect(() => {
       if (regions[regionName]) {
         setRegionData(regions[regionName]);
-        setSunData(doSolarCalcs(regions[regionName]));
+        if (regions[regionName].sunFaxData) {
+          setSunData(doSolarCalcs(regions[regionName]));
+        }
       }
   }, [regionName]);
 
@@ -34,7 +36,7 @@ function Weather() {
     </TopNavBar>
 
     <Label dimensions="WarningDimension">
-      NOW REWRITTEN IN REACT!
+      NOW 110% ZOOMABLE AND 69% MOBILE FRIENDLY!
     </Label>
 
     <Label dimensions="TopDimension">
@@ -91,7 +93,7 @@ function Weather() {
 
   <div className="EndText">
   <img className="OprahCat" src="/gifs/banr_oprah.gif"></img>
-  <h6>ALL DATA ON THIS WEBSITE IS PROVIDED FOR FREE BY VARIOUS DEPARTMENTS OF THE UNITED STATES GOVERNMENT.<br></br>I DO NOT CLAIM IT AS MY OWN AND DO NOT PRESENT THIS DATA WITH ANY WARRANTY OR REPRESENTATION.<br></br> HUGE THANKS TO NOAA, NWS, EPA, AND NASA!!! A PORTION OF THIS WORK USED CODE GENEROUSLY PROVIDED BY BRIAN BLAYLOCK'S HERBIE PYTHON PACKAGE!<br></br>SORRY THIS PAGE IS NOT YET MOBILE OPTIMIZED | CONTACT AVERY@SCRUMP.CFD WITH ISSUES</h6>
+  <h6>ALL DATA ON THIS WEBSITE IS PROVIDED FOR FREE BY VARIOUS DEPARTMENTS OF THE UNITED STATES GOVERNMENT.<br></br>I DO NOT CLAIM IT AS MY OWN AND DO NOT PRESENT THIS DATA WITH ANY WARRANTY OR REPRESENTATION.<br></br> HUGE THANKS TO NOAA, NWS, EPA, AND NASA!!! A PORTION OF THIS WORK USED CODE GENEROUSLY PROVIDED BY BRIAN BLAYLOCK'S HERBIE PYTHON PACKAGE!<br></br>MOBILE SUPPORT IS HAPPENING SLOWLY | CONTACT AVERY@SCRUMP.CFD WITH ISSUES</h6>
   </div>
   </>
   );

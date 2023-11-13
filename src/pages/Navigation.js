@@ -30,7 +30,7 @@ function Navigation() {
       <h2 className="PurpleFlashText">CHOOSE FROM OUR ORGANIZED LIST OF GLOBAL CITIES!!!</h2>
       </div>
 
-      <div className="CenterDiv">
+      <div className="NavList">
       {
         cities.map(city => (
           <Link key={city.path} to={`/weather/${city.path}`}>

@@ -49,7 +49,8 @@ function RadarDailyWindow({ regionData }) {
         'outerChildren': <>
         <img className="ScratchCat" src="/gifs/scratchcat.gif"></img>
         <img className="DanceCat" src="/gifs/dancecat.gif"></img>
-        </>
+        </>,
+        'contentClassName': "RadarHourlyContentResize"
     }
 
       return (
@@ -62,6 +63,7 @@ function RadarDailyWindow({ regionData }) {
                     </div>
                 </div>
             )}
+            <div className="RadarSpacer"></div>
             {(dailyForecastData || dailyForecastError || dailyForecastLoading) && (
                 <DailyTable data={ dailyForecastData } error = { dailyForecastError } loading = { dailyForecastLoading }/>
             )}

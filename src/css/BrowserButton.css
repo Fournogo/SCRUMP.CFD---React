@@ -2,3 +2,9 @@
     width: 120px;
     height: 30px;
 }
+
+@media (max-width: 500px) {
+    .Button.BrowserButton {
+        width: 80px;
+    }
+}

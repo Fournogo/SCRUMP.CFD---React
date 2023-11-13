@@ -39,8 +39,15 @@ function SunFax({ regionData, sunData }) {
         }
     }, [regionData, sunData])
 
+    const windowProps = {
+        className: "SunFax",
+        disableTaskbar: true,
+        removePadding: true,
+        title: "GIMME_SUN_FAX.EXE"
+    }
+
     return (
-        <OSWindow className="SunFax" disableTaskbar={true} removePadding={true}>
+        <OSWindow {...windowProps}>
             <table className="SunTable">
             <tr>
                 <th className="PurpleFlashText Header" colspan="2">TODAY'S SUN FAX</th>

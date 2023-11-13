@@ -104,7 +104,15 @@ function GoesImages({ regionData }) {
         <PauseButton onClick={() => handlePausePlay()}></PauseButton>,
         <NextButton onClick={() => handleIncrement()}></NextButton>,
         <BrowserButton/>],
-        'browserItems': [
+        'browserItems': [<h3 className="Gray">FRAME SELECTOR</h3>,
+        <input 
+        className="FrameSlider"
+        type="range" 
+        min="0" 
+        max="95"
+        value={goesFrameRequest} 
+        onChange={handleSliderChange}
+        style={{ zIndex: 5000 }}/>,
         <h3 className="Gray">REGION SELECTOR</h3>,
         <select onChange={(e) => handleGoesCodeChange(e.target.value)}>
         {optionElements}
@@ -127,19 +135,11 @@ function GoesImages({ regionData }) {
         <option value="25">25 fps</option>
         <option value="30">30 fps</option>
         </select>,
-        <h3 className="Gray">FRAME SELECTOR</h3>,
-        <input 
-        className="FrameSlider"
-        type="range" 
-        min="0" 
-        max="95"
-        value={goesFrameRequest} 
-        onChange={handleSliderChange}
-        style={{ zIndex: 5000 }}/>,
         <h2 className="BrowserDescription">{browserDescriptionLine1}<br></br><br></br>{browserDescriptionLine2}</h2>
         ],
         'descriptionText': 'WHO SPYING ON WHO???',
-        'outerChildren': <><img src="/gifs/laycat.gif" className="LayCat"></img></>
+        'outerChildren': <><img src="/gifs/laycat.gif" className="LayCat"></img></>,
+        'contentClassName': 'ContentHeight'
     })
 
     useEffect(() => {

@@ -1,6 +1,6 @@
 .AnimateContainer {
     width: 100%; /* or any specific width */
-    height: 800px; /* or any specific height */
+    height: 100%; /* or any specific height */
     display: flex;
     justify-content: center;
     box-sizing: border-box;
@@ -9,6 +9,8 @@
     border-top: solid 2px #353535;
     border-left: solid 2px #ffffff;
     background-color: #323232;
+    -moz-transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
 }
 
 .White {
@@ -18,6 +20,7 @@
 .Animate {
     display: flex;
     width: 100%; /* or any specific width */
+    height: 100%;
     position: relative;
 }
 
@@ -41,5 +44,14 @@
 @media (max-width: 501px) {
     .AnimateContainer {
         height:500px;
+    }
+}
+
+@media (max-width: 927px) {
+    .AnimateContainer {
+        border-bottom: solid 1px #ffffff;
+        border-right: solid 1px #353535;
+        border-top: solid 1px #353535;
+        border-left: solid 1px #ffffff;
     }
 }

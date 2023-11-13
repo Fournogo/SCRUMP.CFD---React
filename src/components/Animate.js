@@ -8,6 +8,7 @@ function Animate({ images,
     frameIncrement, 
     triggerIncrement, 
     frameRequest,
+    delayArray,
     backgroundColor }) {
 
     const domRef = useRef(null);
@@ -23,7 +24,6 @@ function Animate({ images,
     }
 
     function animate() {
-        console.log(frameRate)
         let delayMultiplier = 1
         // Set an interval to toggle image opacities
 
@@ -40,8 +40,9 @@ function Animate({ images,
             delayMultiplier = 30;
             imageIndexRef.current = 0;
         }
-
-        timeoutRef.current = setTimeout(animate, (((1000 / frameRate) * delayMultiplier)))  // Adjust the interval time (in ms) as needed
+        
+        let delayFactor = (delayArray && delayArray[imageIndexRef.current]) !== undefined ? delayArray[imageIndexRef.current] : 1;
+        timeoutRef.current = setTimeout(animate, (((1000 / frameRate) * delayMultiplier * delayFactor)))  // Adjust the interval time (in ms) as needed
     }
 
     // Loader responsible for adding images to the DOM
@@ -86,7 +87,7 @@ function Animate({ images,
             clearTimeout(timeoutRef.current);
         };
 
-    }, [imagesAreLoadedRef.current, isAnimating, frameRate]);
+    }, [imagesAreLoadedRef.current, isAnimating, frameRate, delayArray]);
 
     // Frame request logic for manually flipping through images
     useEffect(() => {

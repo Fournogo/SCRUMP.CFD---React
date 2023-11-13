@@ -20,6 +20,14 @@
     margin-top: 40px;
 }
 
+.NavList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
 @media (orientation: portrait) {
     .YellowWindow.NavigationYellowWindow {
         height: 550px;
@@ -39,5 +47,11 @@
         width: 200px;
         height: 46px;
         margin-top: 10px;
+    }
+}
+
+@media (max-width: 445px) {
+    .NavList {
+        font-size: 14px;
     }
 }

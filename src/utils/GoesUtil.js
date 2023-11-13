@@ -13,6 +13,11 @@ async function GoesUtil(source, onProgress) {
         }
     */
 
+    const { numImages, goesJson, goesLink, goesResolution } = source;
+    
+    const numImagesToRequest = numImages;
+    const percentIncrement = (1 / (numImages));
+
     const cleanPercent = (percentComplete) => {
         return ((Math.round(percentComplete * 1000) / 1000) * 100).toFixed(1);
     }
@@ -23,6 +28,8 @@ async function GoesUtil(source, onProgress) {
             image.src = completeLink;
             try {
                 await image.decode();
+                percentComplete += percentIncrement;
+                onProgress(cleanPercent(percentComplete));
                 resolve(image);
             } catch (error) {
                 reject(error);
@@ -30,34 +37,39 @@ async function GoesUtil(source, onProgress) {
         });
     };
 
-    const { numImages, goesJson, goesLink, goesResolution } = source;
-
-    const numImagesToRequest = numImages;
-    const percentIncrement = (1 / numImages);
-
     let percentComplete = (0); // See how far along the operation we already are
     onProgress(cleanPercent(percentComplete));
 
+    console.log(goesJson)
     const imageLinks = await MultiLoader(goesJson)
     .then((response) => response.json())
     .then((responseJSON) => responseJSON.images[goesResolution]) // Ensure the correct resolution is picked
-
-    const imagePromises = []
+    
+    //const imagePromises = [];
+    const imageArray = [];
     for (let i = 0; i < (numImagesToRequest); i++) {
         
         let partialLink = imageLinks[imageLinks.length - numImages + i - 1];
         let completeLink = goesLink + partialLink;
-        const imagePromise = loadAndDecodeImage(completeLink).then((image) => {
+        
+        let image = new Image();
+        image.src = completeLink;
+        await image.decode();
+        percentComplete += percentIncrement;
+        onProgress(cleanPercent(percentComplete));
+
+        imageArray.push(image)
+        /*const imagePromise = loadAndDecodeImage(completeLink).then((image) => {
             percentComplete += percentIncrement;
             onProgress(cleanPercent(percentComplete));
             return image; // This image will be part of the resolved values of Promise.all
-        });
+        });*/
         
-        imagePromises.push(imagePromise);
+        //imagePromises.push(imagePromise);
     }
 
     try {
-        const imageArray = await Promise.all(imagePromises);
+        //const imageArray = await Promise.all(imagePromises);
         return imageArray;
     } catch (error) {
         // Handle any errors from the image loading here

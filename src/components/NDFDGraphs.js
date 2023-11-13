@@ -8,7 +8,7 @@ import {NDFDUtil} from "../utils/NDFDUtil";
 
 function NDFDGraphs({ regionData, sunData }) {
     let shadedRegions;
-
+    const widthThreshold = 927;
     const [cloudCoverOptions, setCloudCoverOptions] = useState(null);
 
     const windowProps = {
@@ -20,7 +20,13 @@ function NDFDGraphs({ regionData, sunData }) {
 
     async function initNDFDGraphs() {
         const {cloudCoverCols} = await NDFDUtil(regionData)
-        
+        const screenWidth = window.innerWidth;
+        let showText
+        if (screenWidth < widthThreshold) {
+          showText = false
+        } else {
+          showText = true
+        }
         setCloudCoverOptions({
             title: {
                 text: "Estimated Percentage of Sky Covered by Clouds"
@@ -55,6 +61,9 @@ function NDFDGraphs({ regionData, sunData }) {
                             let month = x.getMonth() + 1; // Get the month value (January is 0)
                             let date = x.getDate(); // Get the date value
                             return month + "-" + date + " " + hours + ":00 " + ampm;
+                        },
+                        text: {
+                          show: showText
                         }
                     },
                 }

@@ -7,6 +7,7 @@
 
 .Scrump {
     position: absolute;
+    margin-top: 8px;
     height: 200px;
     top: 50%;
     left: 50%;
@@ -17,15 +18,17 @@
 .LabelOutside.TopDimension {
     height: 100px;
     width: 450px;
+    margin-top: 0px;
+    margin-bottom: 60px;
 }
 
 .LabelOutside.WarningDimension {
     box-sizing: border-box;
-    margin-top: 0;
     position: relative;
     top: 0;
     width: 100%;
     z-index: 0;
+    margin-bottom: 30px;
 }
 
 .EndText {
@@ -38,4 +41,71 @@
 
 .OprahCat {
     margin-bottom: 10px;
+}
+
+@media (max-width: 455px) {
+    .Scrump {
+        height: 150px;
+    }
+}
+
+@media (max-width: 668px) {
+    .LabelOutside {
+        width: 100%;
+    }
+    .LabelOutside.TopDimension {
+        width: 100%;
+    }
+    .OSWindow.SunFax {
+        width: 100%;
+    }
+}
+
+@media (max-width: 689px) {
+    .TaskbarItem {
+        font-size: 10px;
+        margin-right: 10px;
+    }
+    .DescriptionText {
+        font-size: 12px;
+    }
+    .GraphContainer {
+        width: 100%;
+        margin: 0;
+        margin-right: 10px;
+    }
+    .ContentHeight {
+        height: 100%;
+    }
+}
+
+
+
+
+@media (max-width: 475px) {
+    .PurpleFlashText.Header {
+        font-size: 18px;
+      }
+      .FirstRow {
+        font-size: 16px;
+      }
+      .DailyTable {
+        font-size: 14px;
+      }
+}
+
+@media (max-width: 950px) {
+    .RadarSpacer {
+        display: none;
+    }
+    .RadarHourlyContentResize {
+        flex-direction: column;
+    }
+    .DailyTable {
+      width: 100%;
+    }
+    .RadarBackground {
+        width: 100%;
+        height: 400px;
+    }
 }

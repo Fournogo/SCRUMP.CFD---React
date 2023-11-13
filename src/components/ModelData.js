@@ -13,7 +13,6 @@ function initSource(regionData) {
 
     return (
         {
-            "modelCode": "hrrr",
             "subsetCode": "subh",
             "productCode": "refd1000m",
             "regionCode": regionCode,
@@ -37,7 +36,7 @@ function generateMenu(dataObj, source, helperFunctions) {
         });
 
         const selectElement = (
-            <select key={key} onChange={(e) => helperFunctions[key](e.target.value)}>
+            <select key={key} data-menu="menu-item" onChange={(e) => helperFunctions[key](e.target.value)}>
                 {options}
             </select>
         );
@@ -61,11 +60,17 @@ function ModelData({ regionData }) {
     const [frameRate, setFrameRate] = useState(15);
     const [isAnimating, setIsAnimating] = useState(null);
     const [triggerIncrement, setTriggerIncrement] = useState(null);
+    const [modelCode, setModelCode] = useState("hrrr");
+    const [delayArrayState, setDelayArrayState] = useState(null);
 
     const [browserButtons, setBrowserButtons] = useState(null);
-    const [windowProps, setWindowProps] = useState(null);
+    const dataStructureRef = useRef(null);
 
-    const frameIncrementRef = useRef(null);
+    const emptySelects = Array.from({ length: 4 }, (_, index) => (
+        <select key={index} data-menu="menu-item">
+          <option value="">HOLD UR HORSES BUCKO</option>
+        </select>
+      ));
 
     const updateMaxValue = (newMax) => {
         setWindowProps(prevState => ({
@@ -80,6 +85,40 @@ function ModelData({ regionData }) {
           })
         }));
       };
+
+      const updateMenuItems = (newMenuItems) => {
+        setWindowProps((prevProps) => {
+          // Copy the array to avoid direct mutation
+          let updatedBrowserItems = [...prevProps.browserItems];
+      
+          // Track the index of the new menu items to replace the old ones
+          let newMenuItemIndex = 0;
+      
+          // Iterate over the current browserItems and replace the ones with the 'menu-item' data-menu
+          updatedBrowserItems = updatedBrowserItems.map(item => {
+            // Check if the item is a 'select' with 'data-menu' attribute equal to 'menu-item'
+            if (React.isValidElement(item) && item.props['data-menu'] === 'menu-item') {
+              // Replace with the new menu item if we haven't exhausted the newMenuItems array
+              if (newMenuItemIndex < newMenuItems.length) {
+                const newItem = newMenuItems[newMenuItemIndex];
+                newMenuItemIndex++; // Move to the next index for the next match
+                return newItem;
+              }
+            }
+            // Return the item as-is if it's not a match
+            return item;
+          });
+      
+          // Return the updated props
+          return {
+            ...prevProps,
+            browserItems: updatedBrowserItems
+          };
+        });
+      };
+      
+
+    const frameIncrementRef = useRef(null);
 
     const handleFrameRateChange = (frameRate) => {
         setFrameRate(Number(frameRate))
@@ -106,10 +145,7 @@ function ModelData({ regionData }) {
 
     const helperFunctions = {
         'modelCode': function handleModelCodeChange(newCode) {
-            setImageSource(prevData => ({
-                ...prevData,
-                modelCode: newCode
-            }));
+            setModelCode(newCode);
         },
         'subsetCode': function handleSubsetCodeChange(newCode) {
             setImageSource(prevData => ({
@@ -130,20 +166,56 @@ function ModelData({ regionData }) {
             }));
         },
     }
-    
+
+    const [windowProps, setWindowProps] = useState({
+        'title': 'FUTURE_PREDICTOR.EXE',
+        'taskbarItems': [<BackButton onClick={() => handleDecrement()}></BackButton>,
+        <PauseButton onClick={() => handlePausePlay()}></PauseButton>,
+        <NextButton onClick={() => handleIncrement()}></NextButton>,
+        <BrowserButton/>],
+        'browserItems': [
+        <h3 className="Gray">FRAME SELECTOR</h3>,
+        <input 
+        className="FrameSlider"
+        type="range" 
+        min="0" 
+        max="71"
+        value={frameRequest} 
+        onChange={handleSliderChange}
+        style={{ zIndex: 5000 }}/>,
+        <h3 className="Gray">MODEL SELECTOR</h3>, emptySelects[0],
+        <h3 className="Gray">SUBSET SELECTOR</h3>, emptySelects[1],
+        <h3 className="Gray">PRODUCT SELECTOR</h3>, emptySelects[2],
+        <h3 className="Gray">REGION SELECTOR</h3>, emptySelects[3],
+        <h3 className="Gray">FRAME RATE SELECTOR</h3>,
+        <select onChange={(e) => handleFrameRateChange(e.target.value)}>
+        <option value="5">5 fps</option>
+        <option value="10">10 fps</option>
+        <option value="15">15 fps</option>
+        <option value="20">20 fps</option>
+        <option value="25">25 fps</option>
+        <option value="30">30 fps</option>
+        </select>,
+        <h2 className="BrowserDescription">{browserDescriptionLine1}</h2>,],
+        'descriptionText': 'TRIPPY COLORS!!',
+        'contentClassName': 'ContentHeight'
+    });
 
     useEffect(() => {
     async function fetchData() {
         setImages(null);
         setIsLoading(true);
         try {
-            const {imageArray, dataStructure} = await ModelUtil(imageSource, (percentComplete) => {
+            const {imageArray, menuItems, delayArray} = await ModelUtil(modelCode, imageSource, (percentComplete) => {
                 setLoadingPercent(percentComplete);
             });
-            setBrowserButtons(generateMenu(dataStructure, imageSource, helperFunctions));
+            setDelayArrayState(delayArray)
+            
+            setBrowserButtons(generateMenu(menuItems, imageSource, helperFunctions));
             setImages(imageArray);
             if (windowProps) {
                 updateMaxValue(imageArray.length - 1);
+                updateMenuItems(generateMenu(menuItems, imageSource, helperFunctions))
             }
             setIsAnimating(true);
         } catch (err) {
@@ -156,40 +228,20 @@ function ModelData({ regionData }) {
     }, [imageSource]);
 
     useEffect(() => {
-        if (browserButtons) {
-        setWindowProps({
-            'title': 'FUTURE_PREDICTOR.EXE',
-            'taskbarItems': [<BackButton onClick={() => handleDecrement()}></BackButton>,
-            <PauseButton onClick={() => handlePausePlay()}></PauseButton>,
-            <NextButton onClick={() => handleIncrement()}></NextButton>,
-            <BrowserButton/>],
-            'browserItems': [<h3 className="Gray">MODEL SELECTOR</h3>, browserButtons[0],
-            <h3 className="Gray">SUBSET SELECTOR</h3>, browserButtons[1],
-            <h3 className="Gray">PRODUCT SELECTOR</h3>, browserButtons[2],
-            <h3 className="Gray">REGION SELECTOR</h3>, browserButtons[3],
-            <h3 className="Gray">FRAME SELECTOR</h3>,
-            <input 
-            className="FrameSlider"
-            type="range" 
-            min="0" 
-            max="71"
-            value={frameRequest} 
-            onChange={handleSliderChange}
-            style={{ zIndex: 5000 }}/>,
-            <h3 className="Gray">FRAME RATE SELECTOR</h3>,
-            <select onChange={(e) => handleFrameRateChange(e.target.value)}>
-            <option value="5">5 fps</option>
-            <option value="10">10 fps</option>
-            <option value="15">15 fps</option>
-            <option value="20">20 fps</option>
-            <option value="25">25 fps</option>
-            <option value="30">30 fps</option>
-            </select>,
-            <h2 className="BrowserDescription">{browserDescriptionLine1}</h2>,],
-            'descriptionText': 'TRIPPY COLORS!!'
-        })
-    }
-    }, [browserButtons])
+        if (modelCode === 'hrrr') {
+            setImageSource({
+                "subsetCode": "subh",
+                "productCode": "refd1000m",
+                "regionCode": regionData.modelData.modelState,
+            })
+        } else if (modelCode === 'gfs') {
+            setImageSource({
+                "subsetCode": "pgrb2.0p25",
+                "productCode": "refd1000m",
+                "regionCode": regionData.modelData.modelState,
+            })
+        }
+    }, [modelCode])
 
     return (
         <OSWindow {...windowProps}>
@@ -198,7 +250,7 @@ function ModelData({ regionData }) {
                 <Loading percent={loadingPercent}></Loading>
             )}
         </>
-        {(images || frameRequest || isAnimating || triggerIncrement || frameRate) && (
+        {(images || frameRequest || isAnimating || triggerIncrement || frameRate || delayArrayState) && (
             <>
             <Animate images={images} 
             isAnimating={isAnimating} 
@@ -207,6 +259,7 @@ function ModelData({ regionData }) {
             triggerIncrement={triggerIncrement} 
             frameRate={frameRate} 
             frameRequest={frameRequest}
+            delayArray={delayArrayState}
             backgroundColor={"White"}/>
             </>
         )}
